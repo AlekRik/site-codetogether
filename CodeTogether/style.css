@@ -1,0 +1,363 @@
+/* ------------------- */
+/* CONFIGURAÇÕES GERAIS E VARIÁVEIS */
+/* ------------------- */
+
+:root {
+    /* Cores */
+    --color-logo-bg: #32255F;
+    --color-dark-blue: #0F023A;
+    --color-footer-bg: #161718;
+    --color-light-gray-btn: #E0E0E0;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-text-light: #F0F0F0;
+    --color-progress-bar: #4A90E2;
+
+    /* Fontes */
+    --font-primary: 'Poppins', sans-serif; /* Substituta para Sansation */
+    --font-secondary: 'Inter', sans-serif;
+    --font-code: 'Anonymous Pro', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-light);
+    background-color: var(--color-black);
+    min-height: 100vh;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ------------------- */
+/* HEADER E FOOTER */
+/* ------------------- */
+header {
+    background-color: var(--color-black);
+    padding: 20px 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    background-color: var(--color-logo-bg);
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    border-color: var(--color-logo-bg);
+}
+
+footer {
+    background-color: var(--color-footer-bg);
+    color: #888;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer.footer-absolute {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* ------------------- */
+/* COMPONENTES REUTILIZÁVEIS */
+/* ------------------- */
+.btn {
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--color-logo-bg);
+    color: var(--color-white);
+    font-family: var(--font-secondary);
+}
+
+.btn-secondary {
+    background-color: var(--color-light-gray-btn);
+    color: var(--color-dark-blue);
+    font-family: var(--font-secondary);
+}
+
+
+.page-title {
+    background-color: var(--color-light-gray-btn);
+    color: var(--color-dark-blue);
+    padding: 15px 40px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+/* ------------------- */
+/* PÁGINA HOME */
+/* ------------------- */
+.hero-section {
+    background: url('images/fundohome2.png') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.cta-section {
+    background: url('images/fundohome1.png') no-repeat center center/cover;
+    padding: 80px 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.card {
+    background-color: rgba(15, 2, 58, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 30%;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    min-height: 80px;
+}
+
+
+/* ------------------- */
+/* PÁGINA TRILHAS */
+/* ------------------- */
+.trilhas-bg {
+    background: var(--color-black) url('images/trilhas.png') no-repeat center center;
+    background-size: cover;
+}
+
+.trilhas-page .container {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    text-align: center;
+}
+
+.filters {
+    margin: 30px 0 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid var(--color-light-gray-btn);
+    color: var(--color-light-gray-btn);
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: rgba(224, 224, 224, 0.2);
+}
+
+.trilhas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.trilha-card {
+    background-color: var(--color-dark-blue);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.trilha-card h3 {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.trilha-card p {
+    font-family: var(--font-code);
+    margin-bottom: 25px;
+    min-height: 70px;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    margin-bottom: 25px;
+}
+
+.progress-bar div {
+    width: 30%; /* Exemplo de progresso */
+    height: 100%;
+    background-color: var(--color-progress-bar);
+    border-radius: 4px;
+}
+
+
+/* ------------------- */
+/* PÁGINA PROJETOS */
+/* ------------------- */
+.projetos-bg {
+    background: #D9D9D9 url('images/projetos.png') no-repeat center center;
+    background-size: contain;
+}
+
+.projetos-page .container {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.projeto-card {
+    background-color: var(--color-dark-blue);
+    padding: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+}
+
+.projeto-card .info p {
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+}
+
+/* ------------------- */
+/* RESPONSIVIDADE (MOBILE) */
+/* ------------------- */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 80px; /* Garante espaço para o footer */
+    }
+    
+    header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .trilhas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .projeto-card {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        clip-path: none; /* Remove o clip-path em telas menores */
+        border-radius: 15px;
+    }
+
+    footer.footer-absolute {
+        position: relative;
+    }
+}
